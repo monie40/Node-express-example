@@ -1,6 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
 const campsiteRouter = require('./routes/campsiteRouter');
+const promotionRouter = require('./routes/promotionRouter');
+const partnerRouter = require('./routes/partnerRouter');
 
 const hostname = 'localhost';
 const port = 3000;
@@ -12,6 +14,12 @@ app.use(express.json());
 
 //We provide the root path for the campsiteRouter here and thats why we dont need to specify that in campsiteRouter.js
 app.use('/campsites', campsiteRouter);
+
+app.use('/promotions', promotionRouter);
+
+app.use('/partners', partnerRouter);
+
+
 
 
 /*
